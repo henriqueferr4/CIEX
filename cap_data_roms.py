@@ -6,25 +6,16 @@ import xarray as xr
 from datetime import datetime
 import os
 
-#COM DATAS ESECIFICAR PARA TESTE
-# Importando o nc do roms
-dir_out_roms = f"home/william/COAWST/ROMS_OUTPUTS/2025092400"
-file_out_roms = f"{dir_out_roms}/procosta_his_20250924.nc"
 
-# Diretório de saída customizado
-dir_save = f"/home/CIEX/out_ROMS_CIEX_20250924"
-os.makedirs(dir_save, exist_ok=True)
-file_save = f"{dir_save}/roms_dataset_20250924.nc"
-
-'''# Criando dataset da saída do ROMS
+# Criando dataset da saída do ROMS
 # Importando o nc do roms
-dir_out_roms = f"home/william/COAWST/ROMS_OUTPUTS/{datetime.now().strftime('%Y%m%d')}00"
+dir_out_roms = f"/home/william/COAWST/ROMS_OUTPUTS/{datetime.now().strftime('%Y%m%d')}00"
 file_out_roms = f"{dir_out_roms}/procosta_his_{datetime.now().strftime('%Y%m%d')}.nc"
 
 # Diretório de saída customizado
 dir_save = f"/home/CIEX/out_ROMS_CIEX_{datetime.now().strftime('%Y%m%d')}"
 os.makedirs(dir_save, exist_ok=True)
-file_save = f"{dir_save}/roms_dataset_{datetime.now().strftime('%Y%m%d')}.nc"'''
+file_save = f"{dir_save}/roms_dataset_{datetime.now().strftime('%Y%m%d')}.nc"
 
 ds = xr.open_dataset(file_out_roms)
 
@@ -62,4 +53,3 @@ try:
     print("✅dataset roms gerado com sucesso")
 except:
     print("❌Falha ao gerar dataset roms")
-
